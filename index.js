@@ -18,11 +18,12 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const PORT = 5000;
-
+// const PORT = 5000;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 // Middleware
 app.use(cors({
   origin: [
+    FRONTEND_URL,
     "http://localhost:5173",
   ],
   credentials: true,
